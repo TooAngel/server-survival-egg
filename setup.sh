@@ -1,11 +1,14 @@
 #!/bin/bash
 
+set -e
+
+# For debugging purpose
+set -o xtrace
+
 apt update
-apt install -y wget
+apt install -y wget sqlite3
 
-rm Cuberite.tar.gz
-wget https://builds.cuberite.org/job/Cuberite%20Linux%20x64%20Master/lastSuccessfulBuild/artifact/Cuberite.tar.gz
-tar -xf Cuberite.tar.gz
+./server-egg/module-cuberite-egg/setup.sh
 
-cp server-egg/settings.ini .
-cp server-egg/webadmin.ini .
+cp server-egg/settings.ini Cuberite/
+cp server-egg/webadmin.ini Cuberite/

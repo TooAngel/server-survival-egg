@@ -16,7 +16,7 @@
     },
     "scripts": {
         "installation": {
-            "script": "#!\/bin\/bash\r\n\r\napt update\r\napt install -y git\r\n\r\ncd \/mnt\/server\r\n\r\nrm -rf server-egg\r\ngit clone https:\/\/github.com\/equitas-mc\/server-survival-egg.git server-egg\r\n./server-egg/setup.sh",
+            "script": "#!\/bin\/bash\r\n\r\napt update\r\napt install -y git\r\n\r\ncd \/mnt\/server\r\n\r\nrm -rf server-egg\r\ngit clone --recursive https:\/\/github.com\/equitas-mc\/server-survival-egg.git server-egg\r\n./server-egg/setup.sh",
             "container": "debian:buster-slim",
             "entrypoint": "bash"
         }
