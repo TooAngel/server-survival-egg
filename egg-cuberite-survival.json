@@ -7,7 +7,7 @@
     "author": "tooangel@tooangel.de",
     "description": "Cuberite in survival mode",
     "image": "quay.io\/parkervcp\/pterodactyl-images:base_debian",
-    "startup": ".\/Cuberite",
+    "startup": "cd Cuberite && .\/Cuberite",
     "config": {
         "files": "{\r\n    \"webadmin.ini\": {\r\n        \"parser\": \"ini\",\r\n        \"find\": {\r\n            \"User:admin.Password\": \"{{server.build.env.ADMIN_PASS}}\",\r\n            \"WebAdmin.Ports\": \"{{server.build.env.WEB_PORT}}\"\r\n        }\r\n    }\r\n}",
         "startup": "{\r\n    \"done\": \"Startup complete\"\r\n}",
